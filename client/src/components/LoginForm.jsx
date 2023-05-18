@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ClipLoader } from "react-spinners";
 import { useLogin } from "../hooks/useLogin";
+import { Link } from "react-router-dom";
 
 function LoginForm() {
   const inputRef = useRef(null);
@@ -71,6 +72,12 @@ function LoginForm() {
               <button className="bg-blue-500 hover:bg-blue-700 text-white p-2 rounded-md transform hover:scale-105 transition duration-300">
                 {loading ? <ClipLoader size={20} color={"#fff"} /> : "Login"}
               </button>
+              <div className="text-gray-700 text-sm font-light flex justify-center">
+                Don't have an account?{" "}
+                <span className="ml-1 font-normal text-blue-600 underline">
+                  <Link to="/signup">Signup</Link>
+                </span>
+              </div>
             </div>
           </form>
         </div>

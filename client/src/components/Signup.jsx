@@ -107,6 +107,7 @@ function Signup() {
                 id="User Name"
                 placeholder="Enter your User Name"
                 type="text"
+                errorMessage={errors?.userName}
               />
               <CustomInput
                 label="Password"
@@ -114,56 +115,70 @@ function Signup() {
                 id="Password"
                 placeholder="Enter your Password"
                 type="password"
+                errorMessage={errors?.password}
               />
-              <CustomInput
-                label="House Name"
-                name="houseName"
-                id="House Name"
-                placeholder="Enter your House Name"
-                type="text"
-              />
-              <CustomInput
-                label="Area"
-                name="area"
-                id="Area"
-                placeholder="Enter your Area"
-                type="text"
-              />
-              <CustomInput
-                label="Landmark"
-                name="landmark"
-                id="Landmark"
-                placeholder="Enter your Landmark"
-                type="text"
-              />
-              <CustomInput
-                label="City"
-                name="city"
-                id="City"
-                placeholder="Enter your City"
-                type="text"
-              />
-              <CustomInput
-                label="State"
-                name="state"
-                id="State"
-                placeholder="Enter your State"
-                type="text"
-              />
-              <CustomInput
-                label="Country"
-                name="country"
-                id="Country"
-                placeholder="Enter your Country"
-                type="text"
-              />
-              <CustomInput
-                label="Pincode"
-                name="pincode"
-                id="Pincode"
-                placeholder="Enter your Pincode"
-                type="number"
-              />
+             <CustomInput
+                  label="House Name"
+                  name="houseName"
+                  id="House Name"
+                  placeholder="Enter your house name"
+                  type="text"
+                  errorMessage={errors?.houseName}
+                />
+
+                <CustomInput
+                  label="Area"
+                  name="area"
+                  id="Area"
+                  placeholder="Enter your area"
+                  type="text"
+                  errorMessage={errors?.area}
+                />
+
+                <CustomInput
+                  label="Landmark"
+                  name="landmark"
+                  id="Landmark"
+                  placeholder="Enter your landmark"
+                  type="text"
+                  errorMessage={errors?.landmark}
+                />
+
+                <CustomInput
+                  label="City"
+                  name="city"
+                  id="City"
+                  placeholder="Enter your city"
+                  type="text"
+                  errorMessage={errors?.city}
+                />
+
+                <CustomInput
+                  label="State"
+                  name="state"
+                  id="State"
+                  placeholder="Enter your state"
+                  type="text"
+                  errorMessage={errors?.state}
+                />
+
+                <CustomInput
+                  label="Country"
+                  name="country"
+                  id="Country"
+                  placeholder="Enter your country"
+                  type="text"
+                  errorMessage={errors?.country}
+                />
+
+                <CustomInput
+                  label="Pincode"
+                  name="pincode"
+                  id="Pincode"
+                  placeholder="Enter your pincode"
+                  type="text"
+                  errorMessage={errors?.pincode}
+                />
             </div>
             <div className="flex justify-center mt-8">
               <Avatar

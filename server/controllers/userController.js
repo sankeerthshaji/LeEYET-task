@@ -48,7 +48,54 @@ const loginUser = async (req, res) => {
   }
 };
 
+const getUserDetails = async (req, res) => {
+  const id = req.user._id;
+  try {
+    const userDetails = await User.findById(id).select("-password");
+    res.status(200).json({ userDetails });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
+const updateProfile = async (req, res) => {
+  const id = req.user._id;
+  const file = req.file;
+  try {
+    const values = JSON.parse(req.body.values);
+    const updatedProfile = await User.findByIdAndUpdate(
+      id,
+      {
+        $set: {
+          userName: values.userName,
+          address: {
+            houseName: values.houseName,
+            landmark: values.landmark,
+            area: values.area,
+            city: values.city,
+            state: values.state,
+            country: values.country,
+            pincode: values.pincode,
+          },
+          ...(file && {
+            image: {
+              url: file.path,
+              filename: file.filename,
+            },
+          }),
+        },
+      },
+      { new: true, runValidators: true }
+    );
+    res.status(200).json({ message: "Profile updated successfully" });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
 module.exports = {
   postSignup,
-  loginUser
+  loginUser,
+  getUserDetails,
+  updateProfile,
 };

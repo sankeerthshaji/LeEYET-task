@@ -2,7 +2,6 @@ import { legacy_createStore as createStore } from "redux";
 
 const initialState = {
   user: null,
-  admin: null,
 };
 
 const reducer = (state = initialState, action) => {

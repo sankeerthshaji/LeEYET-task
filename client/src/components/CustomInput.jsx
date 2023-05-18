@@ -1,9 +1,9 @@
 import React from "react";
 import { useField } from "formik";
 
-function CustomInput({ label, ...props }) {
+function CustomInput({ label, errorMessage, ...props }) {
   const [field, meta] = useField(props);
-  const showError = meta.touched && meta.error;
+  const showError = meta.touched && (meta.error || errorMessage);
   return (
     <div>
       <label htmlFor={label} className="text-sm font-medium text-gray-700">
